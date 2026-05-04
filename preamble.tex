@@ -1,0 +1,48 @@
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0ex}
+\setlength{\intextsep}{2em}
+\usepackage{graphicx}
+\usepackage{amsmath}\usepackage{wasysym}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{xcolor}
+\definecolor{linkcolor}{rgb}{0.0, 0.25, 0.42} 
+\hypersetup{colorlinks=true, linkcolor=black,urlcolor=linkcolor}
+\usepackage{booktabs}
+\usepackage[bottom]{footmisc}
+
+\usepackage{titling}\setlength{\droptitle}{-60pt} 
+\usepackage{titlesec}
+\titlespacing{\section}{0ex}{2em}{0ex} % left, before-sep, after-sep, {right-sep}
+\titleformat{\section}[hang]{\bfseries\large}{\thesection}{1em}{}
+\titlespacing{\subsection}{0ex}{1em}{0ex}
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing{\subsubsection}{0ex}{0ex}{1em}
+\titleformat{\subsubsection}[runin]{\normalsize\bfseries}{\thesubsubsection}{1em}{}[:]
+
+
+\newcommand\hl{\vspace{1.5ex} \hrule \vspace{1.5ex}}
+
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+
+\newcommand{\footlink}[3][]{\href{#2}{#3}\footnote{\scriptsize #1 \url{#2}}}
+
+\newcommand{\doi}[1]{doi:\href{https://doi.org/#1}{#1}}
+
+\definecolor{addedtext}{rgb}{0.28, 0.50, 0.70} 
+\newcommand{\add}[1]{\textcolor{addedtext}{#1}}
+
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\imagecredit}[1]{{\footnotesize [Imagery: #1]}}
+
+\DeclareEmphSequence{\bfseries}
+
+\newcommand\caution{\makebox[1.4em][c]{\makebox[0pt][c]{\raisebox{.1em}{\bf \small!}}\makebox[0pt][c]{\Large$\bigtriangleup$}}}
+
+
+\newcommand\nd{\textsuperscript{nd}}
+\newcommand\rd{\textsuperscript{rd}}
+\newcommand\supth{\textsuperscript{th}}
+
+\newcommand\grackle{GRACkLe}
