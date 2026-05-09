@@ -1,0 +1,33 @@
+name: CI 
+on: [push] 
+jobs: 
+  build: 
+   runs-on: ubuntu-latest 
+   permissions:
+      contents: write
+   steps: 
+   - uses: actions/checkout@v4 
+   - name: Run make4ht 
+     uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+     env: 
+       command: 'make4ht -d out grackle-guidelines.tex "fn-in"'
+   - name: Publish the web pages 
+     uses:  peaceiris/actions-gh-pages@v3 
+     with: 
+       github_token: ${{ secrets.GITHUB_TOKEN }} 
+       publish_dir: ./out 
+   - name: copy
+     env:
+       SRC_FOLDER_PATH: 'main'
+       TARGET_BRANCH: 'gh-pages'
+     run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git fetch origin --force
+          git checkout -f $TARGET_BRANCH
+          git checkout main -- grackle-guidelines.pdf
+          git add grackle-guidelines.pdf
+          git commit -m "Copy PDF from main to gh-pages"
+          git push origin gh-pages
+
+       
